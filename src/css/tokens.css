@@ -1,0 +1,164 @@
+/* ============================================
+   OxyStore — Design Tokens & Base Styles
+   ============================================ */
+
+/* ===== CSS RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ===== DESIGN TOKENS ===== */
+:root{
+  /* Purple Scale */
+  --ink:    #080412;
+  --p950:   #0d0620;
+  --p900:   #140a2e;
+  --p850:   #1c1040;
+  --p800:   #261652;
+  --p750:   #321e6a;
+  --p700:   #3f2782;
+  --p650:   #4f339e;
+  --p600:   #6040bc;
+  --p550:   #724fd1;
+  --p500:   #8560e0;
+  --p450:   #9873ea;
+  --p400:   #aa87f0;
+  --p350:   #bc9cf4;
+  --p300:   #ccb3f7;
+  --p250:   #daccfa;
+  --p200:   #e6defb;
+  --p150:   #efebfd;
+  --p100:   #f5f2fe;
+  --p50:    #faf8ff;
+
+  /* Accent Colors */
+  --gold:   #f0c040;
+  --rose:   #e05080;
+  --neon:   #30f080;
+  --sky:    #60c8f0;
+
+  /* Typography */
+  --display: 'Bricolage Grotesque', sans-serif;
+  --body:    'Instrument Sans', sans-serif;
+
+  /* Spacing */
+  --max-width: 1280px;
+  --section-padding: 80px 32px;
+}
+
+/* ===== BASE ===== */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--p50);
+  color: var(--p900);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--p850); }
+::-webkit-scrollbar-thumb { background: var(--p600); border-radius: 3px; }
+
+/* ===== LOGO ICON ===== */
+.logo-icon { width: 36px; height: 36px; flex-shrink: 0; }
+
+/* ===== SHARED BUTTONS ===== */
+.btn-fill {
+  background: var(--p600);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 16px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--body);
+  cursor: pointer;
+  transition: all .3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-fill:hover {
+  background: var(--p500);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(96,64,188,0.4);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: rgba(255,255,255,0.8);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 14px;
+  padding: 16px 32px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--body);
+  cursor: pointer;
+  transition: all .25s;
+}
+.btn-ghost:hover {
+  border-color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.06);
+}
+
+/* ===== SECTION COMMONS ===== */
+.sec {
+  padding: var(--section-padding);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.sec-hd {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.sec-title {
+  font-family: var(--display);
+  font-size: clamp(24px, 2.8vw, 36px);
+  font-weight: 800;
+  color: var(--p900);
+  letter-spacing: -.5px;
+}
+.sec-title em {
+  font-style: normal;
+  color: var(--p650);
+}
+
+.sec-all {
+  color: var(--p600);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: color .2s;
+}
+.sec-all:hover { color: var(--p500); }
+
+/* ===== PRODUCT IMAGE BACKGROUND UTILS ===== */
+.pi1 { background: linear-gradient(145deg, var(--p150), var(--p200)); }
+.pi2 { background: linear-gradient(145deg, var(--p900), var(--p700)); }
+.pi3 { background: linear-gradient(145deg, #f0eaff, var(--p200)); }
+.pi4 { background: linear-gradient(145deg, #fef8e1, #fde68a); }
+
+/* ===== KEYFRAME ANIMATIONS ===== */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .5; transform: scale(.8); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

@@ -1,0 +1,17 @@
+.nav-icon-btn i {
+  font-size: 18px;
+}
+
+.cart-btn i {
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+.feat-ico i {
+  font-size: 28px;
+  color: var(--p600);
+}
+
+.f-soc i {
+  font-size: 20px;
+}

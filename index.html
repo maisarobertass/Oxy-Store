@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OxyStore — Tecnologia, moda e lifestyle com entrega rápida para todo o Brasil.">
+  <link rel="stylesheet" href="./src/style.css">
+  <title>OxyStore — Estilo que define</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Instrument+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-wrap">
+      <a class="nav-brand" href="#">
+        <img
+          src="./src/assets/logo.png"
+          style="width:38px;height:38px;border-radius:10px;object-fit:cover;filter:brightness(1.2)"
+          alt="OxyStore logo"
+        >
+        <span class="brand-name">Oxy<em>Store</em></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Categorias</a></li>
+        <li><a href="#">Novidades</a></li>
+        <li><a href="#">Energéticos</a></li>
+        <li><a href="#">Promoções</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="nav-icon-btn" onclick="toggleSearch()" title="Buscar">
+          <i class="bi bi-search"></i>
+        </button>
+        <button class="nav-icon-btn" title="Favoritos">
+          <i class="bi bi-heart"></i>
+        </button>
+        <button class="cart-btn" onclick="toggleCart()">
+          <i class="bi bi-bag"></i>
+          Carrinho <span class="cart-num" id="c-cnt">3</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-sphere"></div>
+    <div class="hero-inner">
+
+      <!-- Left: Copy (Desktop) -->
+      <div>
+        <div class="hero-pill">
+          <div class="hero-pill-dot"></div>
+          <span>Coleção Verão 2025</span>
+        </div>
+        <h1 class="hero-h1">
+          Estilo que<br>
+          <span class="grad">define</span><br>
+          quem você é
+        </h1>
+        <p class="hero-sub">
+          Produtos exclusivos com design sofisticado. Tecnologia, moda e lifestyle —
+          com entrega rápida para todo o Brasil.
+        </p>
+        <div class="hero-ctas">
+          <button class="btn-fill">Explorar Coleção <span>→</span></button>
+          <button class="btn-ghost">Ver Promoções</button>
+        </div>
+        <div class="hero-kpis">
+          <div>
+            <div class="kpi-val">50k+</div>
+            <div class="kpi-lbl">Clientes satisfeitos</div>
+          </div>
+          <div style="width:1px;background:rgba(255,255,255,0.1)"></div>
+          <div>
+            <div class="kpi-val">2k+</div>
+            <div class="kpi-lbl">Produtos únicos</div>
+          </div>
+          <div style="width:1px;background:rgba(255,255,255,0.1)"></div>
+          <div>
+            <div class="kpi-val">4.9 ★</div>
+            <div class="kpi-lbl">Avaliação média</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Visual Card (Desktop) -->
+      <div class="hero-visual">
+        <div class="float-badge">
+          <div class="float-badge-val">50%</div>
+          <div class="float-badge-lbl">OFF hoje</div>
+        </div>
+        <div class="float-badge2">
+          <div class="float-b2-row">
+            <div class="float-b2-dot"></div>
+            <div class="float-b2-txt">1.248 pedidos hoje</div>
+          </div>
+        </div>
+        <div class="hero-card-main">
+          <div class="hcard-grid">
+            <div class="hcard-item">
+              <div class="hcard-emoji">🎧</div>
+              <div class="hcard-name">Fone Pro X</div>
+              <div class="hcard-price">R$ 299,90</div>
+            </div>
+            <div class="hcard-item">
+              <div class="hcard-emoji">⌚</div>
+              <div class="hcard-name">Smart Watch</div>
+              <div class="hcard-price">R$ 589,90</div>
+            </div>
+            <div class="hcard-item">
+              <div class="hcard-emoji">👟</div>
+              <div class="hcard-name">Sneaker Lite</div>
+              <div class="hcard-price">R$ 349,90</div>
+            </div>
+            <div class="hcard-item">
+              <div class="hcard-emoji">🎮</div>
+              <div class="hcard-name">Controle X</div>
+              <div class="hcard-price">R$ 199,90</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="marquee-item"><span class="dot">✦</span> Frete Grátis acima de R$199</div>
+      <div class="marquee-item"><span class="dot">✦</span> Parcelamento 12x sem juros</div>
+      <div class="marquee-item"><span class="dot">✦</span> Devolução gratuita em 30 dias</div>
+      <div class="marquee-item"><span class="dot">✦</span> Suporte 24h por dia</div>
+      <div class="marquee-item"><span class="dot">✦</span> Mais de 50.000 clientes satisfeitos</div>
+      <div class="marquee-item"><span class="dot">✦</span> Produtos originais e garantidos</div>
+      <!-- Loop repeat -->
+      <div class="marquee-item"><span class="dot">✦</span> Frete Grátis acima de R$199</div>
+      <div class="marquee-item"><span class="dot">✦</span> Parcelamento 12x sem juros</div>
+      <div class="marquee-item"><span class="dot">✦</span> Devolução gratuita em 30 dias</div>
+      <div class="marquee-item"><span class="dot">✦</span> Suporte 24h por dia</div>
+      <div class="marquee-item"><span class="dot">✦</span> Mais de 50.000 clientes satisfeitos</div>
+      <div class="marquee-item"><span class="dot">✦</span> Produtos originais e garantidos</div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <div class="sec">
+    <div class="sec-hd">
+      <h2 class="sec-title">Explorar <em>Categorias</em></h2>
+      <span class="sec-all">Ver todas →</span>
+    </div>
+    <div class="cats-grid">
+      <div class="cat-card cc1"><div class="cat-icon">🎧</div><div class="cat-name">Eletrônicos</div><div class="cat-qty">432 produtos</div></div>
+      <div class="cat-card cc2"><div class="cat-icon">👕</div><div class="cat-name">Moda</div><div class="cat-qty">891 produtos</div></div>
+      <div class="cat-card cc3"><div class="cat-icon">🏋️</div><div class="cat-name">Esportes</div><div class="cat-qty">217 produtos</div></div>
+      <div class="cat-card cc4"><div class="cat-icon">💄</div><div class="cat-name">Beleza</div><div class="cat-qty">564 produtos</div></div>
+    </div>
+  </div>
+
+  <!-- FEATURED PRODUCTS -->
+  <div class="sec" style="padding-top:0">
+    <div class="sec-hd">
+      <h2 class="sec-title">Em <em>Destaque</em></h2>
+      <span class="sec-all">Ver todos →</span>
+    </div>
+    <div class="prod-grid">
+
+      <div class="prod-card" onclick="addCart('Fone OxyPro 900', 299.90)">
+        <div class="prod-img pi1">
+          <span class="prod-badge pb-new">NOVO</span>
+          <button class="prod-fav" onclick="event.stopPropagation()">♡</button>
+          🎧
+        </div>
+        <div class="prod-info">
+          <div class="prod-brand">OxyAudio</div>
+          <div class="prod-name">Fone OxyPro 900 Sem Fio</div>
+          <div class="prod-stars">★★★★★ <span style="color:var(--p500);font-size:11px">(284)</span></div>
+          <div class="prod-row">
+            <span class="prod-price">R$299<small style="font-size:13px">,90</small></span>
+            <button class="prod-add" onclick="event.stopPropagation();addCart('Fone OxyPro 900',299.90)">+ Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod-card" onclick="addCart('Smart Watch Ultra', 589.90)">
+        <div class="prod-img pi2">
+          <span class="prod-badge pb-sale">−20%</span>
+          <button class="prod-fav" onclick="event.stopPropagation()">♡</button>
+          ⌚
+        </div>
+        <div class="prod-info">
+          <div class="prod-brand">OxyTech</div>
+          <div class="prod-name">Smart Watch Ultra Series 5</div>
+          <div class="prod-stars">★★★★☆ <span style="color:var(--p500);font-size:11px">(107)</span></div>
+          <div class="prod-row">
+            <div><span class="prod-price">R$589<small style="font-size:13px">,90</small></span><span class="prod-old">R$737</span></div>
+            <button class="prod-add" onclick="event.stopPropagation();addCart('Smart Watch Ultra',589.90)">+ Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod-card" onclick="addCart('Sneaker Oxy Lite', 349.90)">
+        <div class="prod-img pi3">
+          <button class="prod-fav" onclick="event.stopPropagation()">♡</button>
+          👟
+        </div>
+        <div class="prod-info">
+          <div class="prod-brand">OxyWear</div>
+          <div class="prod-name">Sneaker Oxy Lite Edition</div>
+          <div class="prod-stars">★★★★★ <span style="color:var(--p500);font-size:11px">(512)</span></div>
+          <div class="prod-row">
+            <span class="prod-price">R$349<small style="font-size:13px">,90</small></span>
+            <button class="prod-add" onclick="event.stopPropagation();addCart('Sneaker Oxy Lite',349.90)">+ Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod-card" onclick="addCart('Controle OxyGame X', 199.90)">
+        <div class="prod-img pi4">
+          <span class="prod-badge pb-hot">HOT 🔥</span>
+          <button class="prod-fav" onclick="event.stopPropagation()">♡</button>
+          🎮
+        </div>
+        <div class="prod-info">
+          <div class="prod-brand">OxyGame</div>
+          <div class="prod-name">Controle OxyGame X Pro</div>
+          <div class="prod-stars">★★★★☆ <span style="color:var(--p500);font-size:11px">(89)</span></div>
+          <div class="prod-row">
+            <span class="prod-price">R$199<small style="font-size:13px">,90</small></span>
+            <button class="prod-add" onclick="event.stopPropagation();addCart('Controle OxyGame X',199.90)">+ Add</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROMO BANNER -->
+  <div class="banner-outer">
+    <div class="promo-banner">
+      <div>
+        <div class="promo-label">⚡ Oferta Limitada</div>
+        <h2 class="promo-h2">Semana Oxy: até 50% off<br>em toda a loja</h2>
+        <p class="promo-txt">Condições exclusivas com frete grátis e parcelamento em até 12x sem juros. Aproveite enquanto durar!</p>
+        <button class="btn-fill" style="margin-top:24px;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25)">
+          Aproveitar agora →
+        </button>
+      </div>
+      <div class="promo-circle">50%<small>OFF</small></div>
+    </div>
+  </div>
+
+  <!-- ENERGY SECTION -->
+  <section class="energy-section">
+    <div class="energy-inner">
+
+      <div class="e-hd">
+        <div>
+          <div class="e-eyebrow"><span>⚡ Energia máxima</span></div>
+          <h2 class="e-title">Energéticos<br><em>que dominam</em></h2>
+          <p class="e-sub">As maiores marcas do mundo — do Monster ao Red Bull — e o exclusivo Oxy Boost, só aqui.</p>
+        </div>
+        <div class="e-see">Ver catálogo completo →</div>
+      </div>
+
+      <div class="e-tabs">
+        <div class="etab on">Todos</div>
+        <div class="etab">Monster</div>
+        <div class="etab">Red Bull</div>
+        <div class="etab">Oxy Boost</div>
+        <div class="etab">Zero Açúcar</div>
+        <div class="etab">Sabores Especiais</div>
+      </div>
+
+      <div class="energy-grid">
+
+        <div class="ecard mn-og" onclick="addCart('Monster Energy Original', 9.90)">
+          <div class="ecard-top">
+            <span class="e-badge eb-hot">🔥 Top venda</span>
+            <button class="e-fav-btn" onclick="event.stopPropagation()">♡</button>
+            <div class="can-scene">
+              <div class="can-body" style="background:#191919;border:2px solid #2a2a2a">
+                <div class="can-lbl" style="color:#30f080;font-size:15px;font-weight:900">M☠NSTER<small>ENERGY</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="ecard-bot">
+            <div class="e-brand">Monster</div>
+            <div class="e-name">Monster Energy Original</div>
+            <div class="e-vol">473 ml · Lata</div>
+            <div class="e-row">
+              <span class="e-price">R$9,90</span>
+              <button class="e-add" onclick="event.stopPropagation();addCart('Monster Original',9.90)">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ecard mn-uw" onclick="addCart('Monster Ultra White', 10.90)">
+          <div class="ecard-top">
+            <span class="e-badge eb-new">Zero açúcar</span>
+            <button class="e-fav-btn" onclick="event.stopPropagation()">♡</button>
+            <div class="can-scene">
+              <div class="can-body" style="background:#dde2ea;border:1.5px solid #b8bec8">
+                <div class="can-lbl" style="color:#222;font-size:12px;font-weight:900">M☠NSTER<small style="color:#555">ULTRA WHITE</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="ecard-bot">
+            <div class="e-brand">Monster</div>
+            <div class="e-name">Monster Ultra White</div>
+            <div class="e-vol">473 ml · Zero Açúcar</div>
+            <div class="e-row">
+              <span class="e-price">R$10,90</span>
+              <button class="e-add" onclick="event.stopPropagation();addCart('Monster Ultra White',10.90)">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ecard mn-ml" onclick="addCart('Monster Mango Loco', 10.90)">
+          <div class="ecard-top">
+            <span class="e-badge eb-fav">Favorito</span>
+            <button class="e-fav-btn" onclick="event.stopPropagation()">♡</button>
+            <div class="can-scene">
+              <div class="can-body" style="background:#c47d0a">
+                <div class="can-lbl" style="color:#fff;font-size:10px;font-weight:900">M☠NSTER<small>MANGO LOCO</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="ecard-bot">
+            <div class="e-brand">Monster</div>
+            <div class="e-name">Monster Mango Loco</div>
+            <div class="e-vol">473 ml · Tropical</div>
+            <div class="e-row">
+              <span class="e-price">R$10,90</span>
+              <button class="e-add" onclick="event.stopPropagation();addCart('Monster Mango Loco',10.90)">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ecard rb-og" onclick="addCart('Red Bull Original', 9.50)">
+          <div class="ecard-top">
+            <button class="e-fav-btn" onclick="event.stopPropagation()">♡</button>
+            <div class="can-scene">
+              <div class="can-body" style="background:#ced4dc;border:1.5px solid #aab0ba">
+                <div class="can-lbl" style="color:#1e40af;font-size:9px;font-weight:900">Red Bull<small style="color:#dc2626">ENERGY DRINK</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="ecard-bot">
+            <div class="e-brand">Red Bull</div>
+            <div class="e-name">Red Bull Original</div>
+            <div class="e-vol">250 ml · Clássico</div>
+            <div class="e-row">
+              <span class="e-price">R$9,50</span>
+              <button class="e-add" onclick="event.stopPropagation();addCart('Red Bull Original',9.50)">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ecard rb-zr" onclick="addCart('Red Bull Zero', 9.50)">
+          <div class="ecard-top">
+            <span class="e-badge eb-new">Zero cal</span>
+            <button class="e-fav-btn" onclick="event.stopPropagation()">♡</button>
+            <div class="can-scene">
+              <div class="can-body" style="background:#04a85a;border:1.5px solid #028a49">
+                <div class="can-lbl" style="color:#fff;font-size:9px;font-weight:900">Red Bull<small>ZERO</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="ecard-bot">
+            <div class="e-brand">Red Bull</div>
+            <div class="e-name">Red Bull Zero</div>
+            <div class="e-vol">250 ml · Zero Calorias</div>
+            <div class="e-row">
+              <span class="e-price">R$9,50</span>
+              <button class="e-add" onclick="event.stopPropagation();addCart('Red Bull Zero',9.50)">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ecard rb-tr" onclick="addCart('Red Bull Tropical', 10.50)">
+          <div class="ecard-top">
+            <span class="e-badge eb-fav">Edição Especial</span>
+            <button class="e-fav-btn" onclick="event.stopPropagation()">♡</button>
+            <div class="can-scene">
+              <div class="can-body" style="background:#d9640e;border:1.5px solid #b45209">
+                <div class="can-lbl" style="color:#fff;font-size:9px;font-weight:900">Red Bull<small>TROPICAL</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="ecard-bot">
+            <div class="e-brand">Red Bull</div>
+            <div class="e-name">Red Bull Tropical</div>
+            <div class="e-vol">250 ml · Summer Edition</div>
+            <div class="e-row">
+              <span class="e-price">R$10,50</span>
+              <button class="e-add" onclick="event.stopPropagation();addCart('Red Bull Tropical',10.50)">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ecard mn-pp" onclick="addCart('Monster Pipeline Punch', 10.90)">
+          <div class="ecard-top">
+            <button class="e-fav-btn" onclick="event.stopPropagation()">♡</button>
+            <div class="can-scene">
+              <div class="can-body" style="background:#c0306a;border:1.5px solid #a0205a">
+                <div class="can-lbl" style="color:#fff;font-size:9px;font-weight:900">M☠NSTER<small>PIPELINE PUNCH</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="ecard-bot">
+            <div class="e-brand">Monster</div>
+            <div class="e-name">Monster Pipeline Punch</div>
+            <div class="e-vol">473 ml · Frutas Tropicais</div>
+            <div class="e-row">
+              <span class="e-price">R$10,90</span>
+              <button class="e-add" onclick="event.stopPropagation();addCart('Monster Pipeline Punch',10.90)">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ecard oxy-bp" onclick="addCart('Oxy Boost Purple Rush', 12.90)">
+          <div class="ecard-top">
+            <span class="e-badge eb-excl">⭐ Exclusivo</span>
+            <button class="e-fav-btn" onclick="event.stopPropagation()">♡</button>
+            <div class="can-scene">
+              <div class="can-body" style="background:linear-gradient(170deg,var(--p600),var(--p850));border:1.5px solid var(--p600)">
+                <div class="can-lbl" style="color:#fff;font-size:12px;font-weight:900;letter-spacing:.5px">OXY<small style="color:var(--p300);letter-spacing:1.5px">BOOST</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="ecard-bot">
+            <div class="e-brand">Oxy Store · Exclusivo</div>
+            <div class="e-name">Oxy Boost Purple Rush</div>
+            <div class="e-vol">500 ml · Edição Especial</div>
+            <div class="e-row">
+              <span class="e-price">R$12,90</span>
+              <button class="e-add" onclick="event.stopPropagation();addCart('Oxy Boost Purple Rush',12.90)">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- Energy Grid -->
+
+      <!-- Pack Promo -->
+      <div class="e-pack">
+        <div class="e-pack-l">
+          <div class="mini-cans">
+            <div class="mc" style="background:#191919;border:1px solid #333"></div>
+            <div class="mc" style="background:#dde2ea"></div>
+            <div class="mc" style="background:#c47d0a"></div>
+            <div class="mc" style="background:#ced4dc"></div>
+            <div class="mc" style="background:linear-gradient(170deg,var(--p600),var(--p850))"></div>
+            <div class="mc mc-more">+3</div>
+          </div>
+          <div>
+            <div class="e-pack-title">Pack Sortido · 12 latas</div>
+            <div class="e-pack-desc">Monster, Red Bull e Oxy Boost — monte seu pack personalizado</div>
+          </div>
+        </div>
+        <div class="e-pack-r">
+          <div>
+            <div class="e-pack-price">R$99,90</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.3);text-decoration:line-through">R$130,80</div>
+          </div>
+          <div class="e-pack-save">−24%</div>
+          <button class="e-pack-btn" onclick="addCart('Pack Sortido 12 latas', 99.90)">Montar pack →</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <div class="feats-sec">
+    <div class="feats-grid">
+      <div class="feat">
+        <div class="feat-ico"><i class="bi bi-truck"></i></div>
+        <div class="feat-title">Frete Grátis</div>
+        <div class="feat-desc">Para compras acima de R$199 em todo o Brasil</div>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><i class="bi bi-shield-lock"></i></div>
+        <div class="feat-title">Compra Segura</div>
+        <div class="feat-desc">Criptografia SSL e pagamento 100% protegido</div>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><i class="bi bi-arrow-repeat"></i></div>
+        <div class="feat-title">30 dias para devolver</div>
+        <div class="feat-desc">Devolução gratuita sem perguntas</div>
+      </div>
+      <div class="feat">
+        <div class="feat-ico"><i class="bi bi-chat-left-dots"></i></div>
+        <div class="feat-title">Suporte 24/7</div>
+        <div class="feat-desc">Atendimento via chat, e-mail e telefone</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="news-outer">
+    <div class="news-box">
+      <div class="news-content">
+        <div class="news-tag">✉ Newsletter</div>
+        <h2 class="news-h2">Ofertas exclusivas<br>no seu e-mail</h2>
+        <p class="news-p">
+          Cadastre-se e receba 10% de desconto na primeira compra,
+          além de promoções e lançamentos em primeira mão.
+        </p>
+        <div class="news-form">
+          <input class="news-input" placeholder="seu@email.com" type="email">
+          <button class="news-btn">Quero desconto →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-top">
+        <div>
+          <img
+            src="assets/images/logo.png"
+            style="width:38px;height:38px;border-radius:10px;object-fit:cover;filter:brightness(1.2)"
+            alt="OxyStore logo"
+          >
+          <span class="f-brand-name">Oxy<em>Store</em></span>
+          <p class="f-desc">A sua loja premium de moda, tecnologia e lifestyle. Qualidade e estilo em cada produto, entregues onde você estiver.</p>
+          <div class="f-socials">
+            <div class="f-soc"><i class="bi bi-facebook"></i></div>
+            <div class="f-soc"><i class="bi bi-instagram"></i></div>
+            <div class="f-soc"><i class="bi bi-tiktok"></i></div>
+            <div class="f-soc"><i class="bi bi-youtube"></i></div>
+            <div class="f-soc"><i class="bi bi-twitter-x"></i></div>
+          </div>
+        </div>
+        <div class="f-col">
+          <h5>Loja</h5>
+          <ul>
+            <li>Eletrônicos</li><li>Moda</li><li>Esportes</li>
+            <li>Beleza</li><li>Energéticos</li><li>Novidades</li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h5>Suporte</h5>
+          <ul>
+            <li>Central de Ajuda</li><li>Minha conta</li><li>Meus pedidos</li>
+            <li>Devoluções</li><li>Rastreamento</li><li>Contato</li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h5>Empresa</h5>
+          <ul>
+            <li>Sobre nós</li><li>Blog</li><li>Parceiros</li>
+            <li>Trabalhe conosco</li><li>Privacidade</li><li>Termos</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 OxyStore. Todos os direitos reservados.</span>
+        <a href="#">Feito com ♥ no Brasil</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SEARCH OVERLAY -->
+  <div class="s-overlay" id="sOverlay" onclick="closeSearch()">
+    <div class="s-box" onclick="event.stopPropagation()">
+      <input class="s-inp" placeholder="Buscar produtos, marcas, categorias..." id="sInp">
+      <hr class="s-div">
+      <div style="font-size:11px;color:rgba(255,255,255,0.35);margin-bottom:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase">Populares</div>
+      <div class="s-tags">
+        <span class="s-tag">Fone Bluetooth</span>
+        <span class="s-tag">Monster</span>
+        <span class="s-tag">Smart Watch</span>
+        <span class="s-tag">Tênis</span>
+        <span class="s-tag">Red Bull</span>
+        <span class="s-tag">Controle</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cDrawer">
+    <div class="cart-hd">
+      <span class="cart-hd-title">Meu Carrinho</span>
+      <button class="cart-close" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-list" id="cList">
+      <div class="cart-itm">
+        <div class="cart-itm-img pi1">🎧</div>
+        <div style="flex:1">
+          <div class="cart-itm-name">Fone OxyPro 900</div>
+          <div class="cart-itm-price">R$ 299,90</div>
+          <div class="cart-itm-qty">Qtd: 1</div>
+        </div>
+      </div>
+      <div class="cart-itm">
+        <div class="cart-itm-img pi2">⌚</div>
+        <div style="flex:1">
+          <div class="cart-itm-name">Smart Watch Ultra</div>
+          <div class="cart-itm-price">R$ 589,90</div>
+          <div class="cart-itm-qty">Qtd: 1</div>
+        </div>
+      </div>
+      <div class="cart-itm">
+        <div class="cart-itm-img pi4">🎮</div>
+        <div style="flex:1">
+          <div class="cart-itm-name">Controle OxyGame X</div>
+          <div class="cart-itm-price">R$ 199,90</div>
+          <div class="cart-itm-qty">Qtd: 1</div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-ft">
+      <div class="cart-total-row">
+        <span class="cart-total-lbl">Total</span>
+        <span class="cart-total-val" id="cTotal">R$ 1.089,70</span>
+      </div>
+      <button class="cart-cta">Finalizar Compra →</button>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- SCRIPTS -->
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- App Script -->
+  <script type="module" src="src/main.js"></script>
+
+</body>
+</html>
